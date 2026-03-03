@@ -82,6 +82,7 @@ Once PostgreSQL flattened the complex relational logic into clean, aggregated CS
 
 ### 📁 Repository Structure
 
+```
 📁 austin-animal-center-analysis/
 ├── 📁 sql/
 │   ├── 00_data_preparation.sql
@@ -104,4 +105,4 @@ Once PostgreSQL flattened the complex relational logic into clean, aggregated CS
 ├── 📁 data/
 │   └── README_data.txt
 └── README.md
-
+```
