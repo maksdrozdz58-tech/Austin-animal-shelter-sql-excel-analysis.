@@ -3,7 +3,7 @@ End-to-end data analysis project exploring animal shelter churn rates and high-r
 
 ![Dashboard Part 1](dashboard/dashboard_part1.png)
 ![Dashboard Part 2](dashboard/dashboard_part2.png)
-![Dashboard Part 3](dashboard/dashboard_part3.png
+![Dashboard Part 3](dashboard/dashboard_part3.png)
 
 ### Project Overview 
 This project leverages SQL and MS Excel to analyze over 160,000 intake and outcome records from the Austin Animal Center. The main objective was to identify the root causes of adoption failures (churn), track adoption velocity over time, and highlight high-risk dog breeds prone to recidivism and adult returns.
