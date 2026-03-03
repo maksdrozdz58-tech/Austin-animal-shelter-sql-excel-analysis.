@@ -43,6 +43,7 @@ This project was structured around answering four critical operational questions
 * **MS Excel:** Used for final data modeling, interactive dashboard creation (Pivot Tables, Slicers), and visual storytelling.
 * **Data Cleaning:** Standardized inconsistent ISO 8601 timestamps and parsed text-based age strings into precise numeric values.
 
+### SQL Highlight 
 The most technically demanding query in the project was the Churn Analysis (Q1). The core challenge: for each adoption event, find the single next intake event for the same animal — if it occurred within 180 days. A naive JOIN would produce a many-to-many explosion. The solution was a ROW_NUMBER() window function partitioned by both animal_id and adoption_date, ordering by the next intake timestamp ascending — isolating exactly one row per adoption:
 
 WITH FutureIntakes AS (
@@ -77,7 +78,7 @@ Each of the four business questions required a fundamentally different relationa
 * **Breed Recidivism (Q3)** was structurally simpler but required careful handling of the statistical threshold: only breeds with ≥ 30 unique individuals were included (HAVING COUNT(animal_id) > 30) to avoid misleading percentages from small samples — a deliberate methodological choice to ensure the findings are actionable rather than anecdotal.
 * **"False Sweet Adoptions" (Q4)** introduced a correlated EXISTS subquery to check, for each puppy adoption, whether that specific animal later re-entered the shelter as an adult (age ≥ 1 year). To prevent performance degradation on a large dataset, dedicated indexes were created on animal_id in both tables prior to execution — reducing lookup complexity from a full sequential scan to an index scan.
 
-* Why Excel for the final mile:
+**Why Excel for the final mile:**
 Once PostgreSQL flattened the complex relational logic into clean, aggregated CSV outputs, Excel became the right tool — not because it is more powerful, but because it is more accessible. The goal of the dashboard layer was to produce something a non-technical shelter manager could open, filter with a slicer, and act on immediately. Pivot Tables and conditional formatting serve that communication goal better than any SQL result set ever could.
 
 ### Repository Structure
