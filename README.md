@@ -23,19 +23,19 @@ This project was structured around answering four critical operational questions
 ### 💡 Key Findings & Business Recommendations
 
 * **1. The 180-Day Churn Problem (9.9% Overall)**
-  * [cite_start]*Insight:* Out of 34,228 total adoptions [cite: 2][cite_start], 3,390 animals were returned to the shelter within half a year [cite: 3][cite_start], establishing a baseline churn rate of 9.9%[cite: 4]. [cite_start]Dogs make up the vast majority of these returns (~80%) compared to cats [cite: 30][cite_start], with "Owner Surrender" being the primary reason[cite: 44]. [cite_start]Age also plays a crucial role: "Adult" and "Young" dogs face the highest return rates[cite: 32, 41, 42].
+* Insight: Out of 34,228 total adoptions, 3,390 animals were returned to the shelter within half a year, establishing a baseline churn rate of 9.9%. Dogs make up the vast majority of these returns (~80%) compared to cats, with "Owner Surrender" being the primary reason. Age also plays a crucial role: "Adult" and "Young" dogs face the highest return rates.
   * *Recommendation:* Implement a targeted post-adoption support program (e.g., behavioral helplines, free basic training) specifically for adopters of adult and young dogs, proactively reaching out before an "Owner Surrender" decision is made.
 
 * **2. Adoption Velocity Trends**
-  * [cite_start]*Insight:* Cohort analysis spanning from Q4 2013 to Q1 2018 indicates that the majority of successful adoptions happen very quickly—within the first 7 days of intake[cite: 46, 62, 70, 79]. 
+  * Insight: Cohort analysis spanning from Q4 2013 to Q1 2018 indicates that the majority of successful adoptions happen very quickly — within the first 7 days of intake. 
   * *Recommendation:* Capitalize on this critical 7-day window. If an animal is not adopted within the first two weeks, they should be automatically flagged for special marketing efforts (e.g., featured social media posts) to prevent long-term shelter stays.
 
 * **3. High-Risk Recidivism Breeds (12.7% Overall Rate)**
-  * [cite_start]*Insight:* While the overall recidivism rate is 12.7%[cite: 51, 52], certain breeds drastically exceed this average. [cite_start]The Doberman Pinsch leads with an alarming return rate of over 28% [cite: 89, 107][cite_start], followed by the Staffordshire Mix (~23%)[cite: 89, 99]. [cite_start]Some extreme cases in the database show individual dogs returning to the shelter even 5 times[cite: 91].
+  * Insight: While the overall recidivism rate is 12.7%, certain breeds drastically exceed this average. The Doberman Pinsch leads with a return rate of over 28%, followed by the Staffordshire Mix (~23%). Some extreme cases show individual dogs returning to the shelter up to 5 times.
   * *Recommendation:* Require potential adopters of high-risk breeds (Doberman, Staffordshire, Pit Bull mixes) to undergo a mandatory counseling session or handling class prior to finalizing the adoption to ensure they are prepared for the breed's specific needs.
 
 * **4. The "False Sweet Adoption" Phenomenon**
-  * *Insight:* Adopting puppies is easy, but keeping them is harder. The data reveals that certain breeds are frequently adopted as puppies (< 6 months) but returned once they mature into adults (> 1 year). [cite_start]The Miniature Schnauzer Mix leads this negative trend with an 11.11% rejection rate [cite: 74, 109] [cite_start](5 returns out of 45 puppy adoptions [cite: 108][cite_start]), followed by the Jack Russell Terrier Mix (6.56%)[cite: 75, 108].
+  * Insight: Adopting puppies is easy, but keeping them is harder. The Miniature Schnauzer Mix leads with an 11.11% rejection rate (5 returns out of 45 puppy adoptions), followed by the Jack Russell Terrier Mix (6.56%).
   * *Recommendation:* Create specific educational materials for adopters of terrier and schnauzer mixes, clearly outlining the expected adult energy levels, behavioral traits, and grooming requirements to manage expectations *before* the puppy grows up.
 
 ### 🛠️ Tools & Techniques Applied
