@@ -62,7 +62,7 @@ WITH FutureIntakes AS (
         ON  o.animal_id = i.animal_id
         AND i.datetime  > o.datetime
     WHERE o.outcome_type = 'Adoption'
-)
+ )
 
 Full queries for all four analyses are available in the /sql folder.
 
