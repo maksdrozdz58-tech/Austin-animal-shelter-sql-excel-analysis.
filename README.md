@@ -5,22 +5,22 @@ End-to-end data analysis project exploring animal shelter churn rates and high-r
 ![Dashboard Part 2](dashboard/dashboard_part2.png)
 ![Dashboard Part 3](dashboard/dashboard_part3.png)
 
-### 📊 Project Overview
+### Project Overview
 This project leverages SQL and MS Excel to analyze over 160,000 intake and outcome records from the Austin Animal Center. The main objective was to identify the root causes of adoption failures (churn), track adoption velocity over time, and highlight high-risk dog breeds prone to recidivism and adult returns.
 
-### 📂 Data Source
+### Data Source
 The data used for this analysis originates from the official **Austin Animal Center** database, made available via Kaggle. The dataset was split into two primary tables both containing over 80,000 records:
 * **`intakes`**: Logs of animals entering the shelter (including date, condition, animal type, and age upon intake).
 * **`outcomes`**: Logs of animals leaving the shelter (including date, outcome type e.g., Adoption/Transfer, and age upon outcome).
 
-### ❓ Business Questions Addressed
+### Business Questions Addressed
 This project was structured around answering four critical operational questions for the shelter:
 1. **Adoption Churn Analysis:** What percentage of adopted animals are returned to the shelter within a 6-month (180-day) window, and what key characteristics (e.g., age group, intake type) drive this churn?
 2. **Time-to-Adoption (Velocity) Cohorts:** What percentage of animals admitted in a given quarterly cohort are successfully adopted within 7, 14, and 30 days of intake, and has this adoption velocity improved year-over-year?
 3. **Breed Recidivism Rates:** What is the overall return rate, and which statistically significant dog breeds (cohorts of ≥ 30 unique individuals) exhibit the highest recidivism rate (coming to the shelter 2 or more times)? Furthermore, what are the average and maximum number of intakes per dog within these high-risk groups?
 4. **"False Sweet Adoptions" (The Puppy Effect):** Which statistically significant dog breeds have the highest percentage of failed puppy adoptions—specifically defined as dogs adopted at under 6 months of age, but subsequently returned to the shelter as adults (≥ 1 year old)?
 
-### 💡 Key Findings & Business Recommendations
+### Key Findings & Business Recommendations
 
 * **1. The 180-Day Churn Problem (9.9% Overall)**
 * Insight: Out of 34,228 total adoptions, 3,390 animals were returned to the shelter within half a year, establishing a baseline churn rate of 9.9%. Dogs make up the vast majority of these returns (~80%) compared to cats, with "Owner Surrender" being the primary reason. Age also plays a crucial role: "Adult" and "Young" dogs face the highest return rates.
@@ -38,7 +38,7 @@ This project was structured around answering four critical operational questions
   * Insight: Adopting puppies is easy, but keeping them is harder. The Miniature Schnauzer Mix leads with an 11.11% rejection rate (5 returns out of 45 puppy adoptions), followed by the Jack Russell Terrier Mix (6.56%).
   * *Recommendation:* Create specific educational materials for adopters of terrier and schnauzer mixes, clearly outlining the expected adult energy levels, behavioral traits, and grooming requirements to manage expectations *before* the puppy grows up.
 
-### 🛠️ Tools & Techniques Applied
+### Tools & Techniques Applied
 * **SQL (PostgreSQL):** Used for heavy data lifting. Leveraged complex aggregations combined with conditional logic (`CASE WHEN`) to calculate precise churn rates and recidivism percentages. Applied Window Functions to rank intake/outcome events, CTEs for readability, and `EXISTS` subqueries optimized with Indexes for complex behavioral tracking (e.g., puppy vs. adult returns).
 * **MS Excel:** Used for final data modeling, interactive dashboard creation (Pivot Tables, Slicers), and visual storytelling.
 * **Data Cleaning:** Standardized inconsistent ISO 8601 timestamps and parsed text-based age strings into precise numeric values.
@@ -67,7 +67,7 @@ WITH FutureIntakes AS (
 Full queries for all four analyses are available in the /sql folder.
 
 
-### 🧠 Technical Rationale: Why SQL + Excel?
+### Technical Rationale: Why SQL + Excel?
 The division of labor between PostgreSQL and Excel in this project was a deliberate architectural choice, not a matter of preference.
 Why PostgreSQL for the analytical core:
 Each of the four business questions required a fundamentally different relational strategy, which is precisely why they were separated into four independent queries rather than forced into one monolithic CTE chain. This makes each analytical unit independently testable and easier to audit.
@@ -80,7 +80,7 @@ Each of the four business questions required a fundamentally different relationa
 * Why Excel for the final mile:
 Once PostgreSQL flattened the complex relational logic into clean, aggregated CSV outputs, Excel became the right tool — not because it is more powerful, but because it is more accessible. The goal of the dashboard layer was to produce something a non-technical shelter manager could open, filter with a slicer, and act on immediately. Pivot Tables and conditional formatting serve that communication goal better than any SQL result set ever could.
 
-### 📁 Repository Structure
+### Repository Structure
 
 ```
 📁 austin-animal-center-analysis/
